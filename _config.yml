@@ -16,7 +16,7 @@
 title: Moon's Blog For Dev
 email: moon.dev.2017@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  .......
+  개발 & 코딩 공부 모음집
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: moonJ_dev
