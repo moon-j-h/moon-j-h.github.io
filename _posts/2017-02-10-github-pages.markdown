@@ -6,26 +6,69 @@ date:   2017-02-10 00:19:42 +0900
 categories: githubpages
 ---
 
+> ## Jekyll 생성
+
+예전부터 생각했었다. 학교 과제든 개인 프로젝트이든 내가 작성한 코드 및 공부 내용을 정리해서 블로그에 올리고 싶다고... 
+하지만 네이버는 다른 용도로 이미 블로그를 사용중이고(아니어도 네이버에 하진 않았을거 같지만...) 티스토리는 시도해 봤지만 별로 손이 안가고
+구글 블로그도 마찬가지... 아 어디다 하지?? 라는 고민 몇 개월째하다 결국 여기로 정착하기로 정했다.
+
+근데.. 엄청난 삽질을... 깃허브를 사용하기는 하지만 그렇게 익숙하지는 않고 깃허브 페이지는 또 처음 접해보고.. 
+어제 하루 종일 날리고 이제 좀 감이 와서 한번 정리해 본다.
+
+ 깃허브 페이지를 사용하기 위해서는 `ruby` `jekyll` `python` `rouge` 가 필요하다.
+ windows 에 저 4가지를 설치하는 방법은 [이곳][whatap-windows-jekyll]에서 참고했다.
+
+위 4가지를 설치했으면 jekyll를 실행할 디렉토리로 가서 cmd를 연 후,
+
 {% highlight text %}
-kekyll new docs
+jekyll new [Directory_Name]
 {% endhighlight %}
 
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+를 입력하면 minima 테마의 jekyll 블로그 파일들이 생성된다.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+생성된 디렉토리로 이동하여
 
-Jekyll also offers powerful support for code snippets:
+{%highlight text %}
+cd [Directory_Name]
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
+jekyll serve
+{% endhighlight %}
+한 후 `localhost:4000`을 확인하면 jekyll가 잘 작동하는 지를 확인할 수 있다.
+
+> ## Github Pages
+> ### user page : [user_name].github.io
+
+나중 추가...
+
+
+> ### project page : [user_name].github.io/[repository_name]
+
+`/[repository_name]` 에 블로그를 올리기 위해서는 두 가지 방법이 있다.
+1. `master branch / docs 디렉토리`에 블로그 관련 파일 푸시
+2. `gh-pages branch` or  `master branch` 에 블로그 관련 파일 푸시
+
+나는 branch를 따로 만드는 것은 귀찮고 한 repository에 블로그 파일들과 실습파일을 푸시할 거기 때문에
+1번째 방법을 사용했다.
+
+사용할 디렉토리에 가서 `jekyll new docs`를 한 다음
+
+{%highlight text %}
+$ git init
+
+$ git remote add origin [remote-repository-url]
+
+$ git add .
+
+$ git commit -m "commit message"
+
+$ git push origin master
 {% endhighlight %}
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+를 하고 `https://moon-j-h.github.io/[repository_name]`에 접속하려하면 아마 에러 날 것이다.
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+repository 의 `settings`의 `GitHub Pages`에 가서 `Source`를 `master branch /docs folder`로 수정해 주면
+`https://moon-j-h.github.io/[repository_name]`에 접속할 수 있다
+
+
+
+[whatap-windows-jekyll]: http://tech.whatap.io/2015/09/11/install-jekyll-on-windows/
