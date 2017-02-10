@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Python Flask"
-subtitle : "Python 기본 문법"
+subtitle : "Python Flask 예제 실습"
 date:   2017-02-10 13:19:58 +0900
 categories: python
 ---
