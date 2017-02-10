@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Welcome to Jekyll!"
+subtitle : "About Jekyll....."
 date:   2017-02-10 00:19:42 +0900
 categories: jekyll update
 ---

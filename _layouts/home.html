@@ -4,7 +4,7 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">Posts</h1>
+  <h1 class="page-heading">Contents</h1>
   
   {{ content }}
 
@@ -16,6 +16,7 @@ layout: default
         <h2>
           <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
         </h2>
+        <p>{{post.subtitle}}</p>
       </li>
     {% endfor %}
   </ul>
